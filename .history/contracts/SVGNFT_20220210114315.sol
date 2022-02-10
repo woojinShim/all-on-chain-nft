@@ -19,7 +19,7 @@ contract SVGNFT is ERC721URIStorage {
     function create(string memory _svg) public {
         _safeMint(msg.sender, tokenCounter);
         // imageURI
-        string memory imageURI = svgToImageURI(_svg);
+        string memory imageURI = svgToImageURI(svg);
         // tokenURI
         string memory tokenURI = formateTokenURI(imageURI);
         // NFT 번호 부여
@@ -29,7 +29,7 @@ contract SVGNFT is ERC721URIStorage {
     }
 
     // base64-sol으로 이미지 인코딩
-    function svgToImageURI(string memory _svg)
+    function setToImageURI(string memory _svg)
         public
         pure
         returns (string memory)
@@ -55,11 +55,11 @@ contract SVGNFT is ERC721URIStorage {
         string memory baseURL = "data:application/json;base64";
         return
             string(
-                abi.encodePacked(
+                abi.encondePacked(
                     baseURL,
-                    Base64.encode(
+                    Base64.enconde(
                         bytes(
-                            abi.encodePacked(
+                            abi.edcodePacked(
                                 '{"name": "SVG NFT"',
                                 '"description": "An NFT based on SVG!"',
                                 '"attributes": ""',

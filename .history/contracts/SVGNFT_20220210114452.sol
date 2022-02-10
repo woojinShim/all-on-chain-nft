@@ -59,7 +59,7 @@ contract SVGNFT is ERC721URIStorage {
                     baseURL,
                     Base64.encode(
                         bytes(
-                            abi.encodePacked(
+                            abi.edcodePacked(
                                 '{"name": "SVG NFT"',
                                 '"description": "An NFT based on SVG!"',
                                 '"attributes": ""',

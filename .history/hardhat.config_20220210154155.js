@@ -31,7 +31,7 @@ module.exports = {
       accounts: {
         mnemonic: MNEMONIC
       },
-      saveDeployments: true
+      saveDeployments: true,
     }
   },
   etherscan: {

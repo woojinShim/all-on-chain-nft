@@ -18,7 +18,6 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 require('dotenv').config()
 const RINKEBY_RPC_URL = process.env.RINKEBY_RPC_URL
 const MNEMONIC = process.env.MNEMONIC
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
@@ -30,12 +29,9 @@ module.exports = {
       url: RINKEBY_RPC_URL,
       accounts: {
         mnemonic: MNEMONIC
-      },
-      saveDeployments: true
-    }
-  },
-  etherscan: {
-    apiKey: ETHERSCAN_API_KEY
+      }
+    },
+    saveDeployments: true
   },
   solidity: "0.8.0",
   namedAccounts: {

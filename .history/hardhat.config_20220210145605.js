@@ -36,7 +36,7 @@ module.exports = {
   },
   etherscan: {
     apiKey: ETHERSCAN_API_KEY
-  },
+  }
   solidity: "0.8.0",
   namedAccounts: {
     deployer: {

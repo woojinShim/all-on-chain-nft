@@ -29,9 +29,9 @@ module.exports = {
     rinkeby: {
       url: RINKEBY_RPC_URL,
       accounts: {
-        mnemonic: MNEMONIC
+        mnemonic: MNEMONIC,
       },
-      saveDeployments: true
+      saveDeployments: true,
     }
   },
   etherscan: {

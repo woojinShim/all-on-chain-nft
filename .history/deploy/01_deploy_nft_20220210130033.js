@@ -28,10 +28,4 @@ module.exports = async ({
     const svgNFT = new ethers.Contract(SVGNFT.address, svgNFTContract.interface, signer)
     const networkName = networkConfig[chainId]['name']
     log(`Verify with: \n npx hardhat verify --network ${networkName} ${svgNFT.address}`)
-
-    let transactionResponse = await svgNFT.create(svg)
-    let receipt = await transactionResponse.wait(1)
-    log(`You've made an NFT!`)
-    log(`You can view the tokenURI here ${await svgNFT.tokenURI(0)}`)
-    
 }

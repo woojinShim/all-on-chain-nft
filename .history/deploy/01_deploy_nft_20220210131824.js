@@ -32,6 +32,6 @@ module.exports = async ({
     let transactionResponse = await svgNFT.create(svg)
     let receipt = await transactionResponse.wait(1)
     log(`You've made an NFT!`)
-    log(`You can view the tokenURI here ${await svgNFT.tokenURI(0)}`)
+    log(`You can view the tokenURI here @{await svgNFT.tokenURI(0)}`)
     
 }

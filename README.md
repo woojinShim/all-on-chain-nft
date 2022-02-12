@@ -1,15 +1,3 @@
-# Basic Sample Hardhat Project
+# opensea
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+https://testnets.opensea.io/assets/0x6aec1c0de3160a25a225e52a0c638d05e87729ae/0

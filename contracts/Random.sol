@@ -1,4 +1,4 @@
-// SPDX_License-Identifier: MIT
+// SPDX-License-Identifier: MIT
 
 pragma solidity 0.8.0;
 
@@ -12,6 +12,8 @@ contract Random is ERC721URIStorage, VRFConsumerBase {
     mapping(bytes32 => address) public requestIdToSender;
     mapping(bytes32 => uint256) public requestIdToTokenId;
 
+    event requestedRandom(bytes32 indexed requestId, uint256 indexed tokenId);
+
     constructor(
         address _VRFCoordinator,
         address _LinkToken,
@@ -23,12 +25,13 @@ contract Random is ERC721URIStorage, VRFConsumerBase {
         tokenCounter = 0;
     }
 
-    function create() public returns (byte32 requestId) {
+    function create() public returns (bytes32 requestId) {
         requestId = requestRandomness(keyHash, fee);
         requestIdToSender[requestId] = msg.sender;
         uint256 tokenId = tokenCounter;
         requestIdToTokenId[requestId] = tokenId;
         tokenCounter = tokenCounter + 1;
+        emit requestedRandom(requestId, tokenId);
     }
 
     function fulfillRandomness(bytes32 requestId, uint256 randomNumber)
